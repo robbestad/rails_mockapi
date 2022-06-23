@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_15_202045) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_23_084514) do
+  create_table "slots", force: :cascade do |t|
+    t.string "validator"
+    t.string "slot_height"
+    t.string "num_transactions"
+    t.boolean "skipped"
+    t.datetime "ts", precision: nil
+    t.decimal "failrate"
+    t.string "blockhash"
+    t.string "transactions"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tokens", force: :cascade do |t|
     t.string "name"
     t.string "volume"
